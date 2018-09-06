@@ -1,0 +1,1 @@
+isql-fb -q -i /etc/zabbix/consulta.sql | grep "time" | cut -d " " -f3

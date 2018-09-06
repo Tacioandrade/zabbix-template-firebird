@@ -1,0 +1,4 @@
+CONNECT /var/sgbd/cep.gdb USER 'SYSDBA' PASSWORD 'ajuda';
+SET STATS ON;
+SELECT * FROM LOG_BAIRRO;
+quit;

@@ -1,0 +1,6 @@
+#!/bin/bash
+if [ ` ps -aux | grep fbguard | grep firebird | wc -l` -eq 1 ]; then
+	echo 1
+else
+	echo 0
+fi
