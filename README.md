@@ -9,12 +9,17 @@ Para que o script funcione é necessário que o servidor onde o Zabbix Agent est
 1 - Acesse o servidor, instale no mesmo o pacote "sudo", caso ainda não esteja instalado.
 
 2 - Após instalar o pacote sudo, crie o arquivo /etc/sudoers.d/zabbix com o seguinte conteúdo:
-echo "zabbix ALL=NOPASSWD:/usr/bin/consultaFirebird" > /etc/sudoers.d/zabbix
+
+echo "zabbix ALL=NOPASSWD:/usr/bin/consultaFirebird" > /etc/sudoers.d/zabbix</p>
 
 3 - Com o sudo configurado, baixe os arquivos necessários, jogando-os nos diretórios corretos:
+
 wget https://raw.githubusercontent.com/Tacioandrade/zabbix-template-firebird/master/scripts/checaFirebird -O /usr/bin/checaFirebird
+
 wget https://raw.githubusercontent.com/Tacioandrade/zabbix-template-firebird/master/scripts/consulta.sql -O /etc/zabbix/consulta.sql 
+
 wget https://raw.githubusercontent.com/Tacioandrade/zabbix-template-firebird/master/scripts/consultaFirebird -O /usr/bin/consultaFirebird
+
 wget https://raw.githubusercontent.com/Tacioandrade/zabbix-template-firebird/master/scripts/userparameter_firebird.conf -O /etc/zabbix/zabbix_agentd.d/userparameter_firebird.conf
 
 4 - Edite o arquivo /etc/zabbix/consulta.sql, alterando nele o caminho ou dados de acesso ao banco de dados, neste local. Na linha: "CONNECT /var/sgbd/cep.gdb USER 'SYSDBA' PASSWORD 'masterkey';", você pode alterar para que o mesmo se conecte a um Firebird Server remoto alterando-o para "CONNECT ip-servidor:/var/sgbd/cep.gdb USER 'SYSDBA' PASSWORD 'masterkey';"
